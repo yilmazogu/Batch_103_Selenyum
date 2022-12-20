@@ -21,7 +21,7 @@ public class C01_Examples {
         ve istediğimiz şekilde olduğunu test edelim
         ve sayfayı kapatalım
          */
-        System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
+       // System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
         //İlk önce browser'i maximize yapalım sonra tüm sayfa için max bekleme süresi olarak 15 saniye belirtelim
         driver.manage().window().maximize();
