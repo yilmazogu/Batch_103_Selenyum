@@ -7,10 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class C04_ClassWork {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -21,9 +22,15 @@ public class C04_ClassWork {
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("city bike", Keys.ENTER);
 
         //Amazon'da görüntülenen ilgili sonuçların sayısını yazdırın
-        WebElement aramaSonucYazisi = driver.findElement(By.className("sg-col-inner"));
-        System.out.println(aramaSonucYazisi.getText());
+        List<WebElement> aramaSonucYazisi  = driver.findElements(By.className("sg-col-inner"));
+        System.out.println(aramaSonucYazisi.get(0).getText());
+       String [] sonucSayisi=aramaSonucYazisi.get(0).getText().split(" ");
+        System.out.println(sonucSayisi[0]);
 
         //Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
+
+        List<WebElement> ilkWE=driver.findElements(By.className("s-image"));
+
+        ilkWE.get(0).click();
     }
 }
