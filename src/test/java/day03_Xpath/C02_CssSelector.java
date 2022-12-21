@@ -28,11 +28,11 @@ public class C02_CssSelector {
         driver.navigate().refresh();
 
 //        4- Sayfa basliginin "Spend less" ifadesi icerdigini test edin
-        String actualTitel =driver.getTitle();
+        String actualTitel = driver.getTitle();
         String arananKelime = "Spend less";
-        if(actualTitel.contains("Spend less")){
+        if (actualTitel.contains("Spend less")) {
             System.out.println("Titel Test PASSED");
-        }else {
+        } else {
             System.out.println("Titel Test FAILED");
         }
 //        5- Gift Cards sekmesine basin
@@ -51,10 +51,12 @@ public class C02_CssSelector {
 //        9-Urun ucretinin 25$ oldugunu test edin
         Thread.sleep(3000);
         WebElement urunUcreti = driver.findElement(By.cssSelector("span[id='gc-live-preview-amount']"));
-        if(urunUcreti.getText().equals("$25.00")){
+        if (urunUcreti.getText().equals("$25.00")) {
             System.out.println("Ucret Testi PASSED");
-        }else {
+        } else {
             System.out.println("Ucret Testi FAIlED");
         }
 //        10-Sayfayi kapatin
         driver.close();
+
+    }}
